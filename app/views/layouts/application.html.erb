@@ -11,6 +11,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light py-2 px-4">
+      <%= link_to "Simple Airbnb", flats_path, class: 'navbar-brand' %>
+      <div class="d-flex">
+      <form action="/" class="form-inline d-flex">
+        <input class="form-control" name="q" type="search" placeholder="<%= @search ? @search : 'Search' %>" aria-label="Search">
+        <button class="btn btn-outline-success mx-2" type="submit">Search</button>
+      </form>
+      <%= link_to "Add Flat", new_flat_path, class: 'btn btn-outline-primary' %>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <%= yield %>
+    </div>
+    <script src="https://kit.fontawesome.com/7b8fdf30c4.js" crossorigin="anonymous"></script>
   </body>
 </html>

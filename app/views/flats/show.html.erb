@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-8 ">
+    <div class="card bg-light p-3 shadow-sm border-0 rounded">
+      <h1><%= @flat.name %></h1>
+      <p><%= @flat.address %></p>
+    </div>
+    <div class="card bg-light p-3 shadow-sm border-0 rounded my-4">
+      <h3>A bit more about this flat...</h3>
+      <p><%= @flat.description %></p>
+    </div>
+    <div>
+        <%= link_to 'Back', flats_path, class: "me-3" %>
+        <%= link_to 'Edit', edit_flat_path(@flat), class: 'text-warning me-3' %>
+        <%= link_to 'Remove', @flat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card bg-light p-3 shadow-sm border-0 rounded">
+      <h3>Details</h3>
+      <div class="my-2">
+        <i class="fa-solid fa-user-group me-1"></i><%= @flat.number_of_guests %>
+        <i class="fa-solid fa-dollar-sign ms-2 me-1"></i><%= @flat.price_per_night %>
+      </div>
+    </div>
+      <div class="card bg-light p-3 shadow-sm border-0 rounded my-4">
+      <div class="d-flex align-items-center">Share
+      <i class="fa fa-facebook-square fa-2x mx-2"></i>
+      <i class="fa fa-twitter-square fa-2x me-2"></i>
+      <i class="fa fa-pinterest-square fa-2x me-2"></i>
+      <i class="fa fa-envelope-square fa-2x"></i>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
